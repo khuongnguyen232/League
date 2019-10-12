@@ -2,6 +2,7 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Accordion from 'react-bootstrap/Accordion';
 import Button from 'react-bootstrap/Button';
+import {connect} from 'react-redux';
 
 import './champList.css';
 import {baseURLImage} from '../API/baseURL';
@@ -39,4 +40,9 @@ const champList = ({list}) => {
       </div>
     )
   };
-export default champList;
+
+  const mapStateToProps = (state) => {
+    console.log(state);
+  };
+
+  export default connect(mapStateToProps,{})(champList);
