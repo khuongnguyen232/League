@@ -1,35 +1,26 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
-import Axios from './API/champList';
 import ChampList from './components/champList';
+import {fetchChamps} from './actions';
 
 class App extends React.Component {
 
-  state = {list:null};
-
-  getChampionList = async () => {
-    const response = await Axios.get('/champion.json');
-    let tempList = [];
-    if(response.data.data) {
-      for(let prop in response.data.data) {
-        tempList.push(response.data.data[prop]);
-      }
-    }
-    this.setState({list:tempList});
-  }
-
   componentDidMount() {
-    this.getChampionList();
+    this.props.fetchChamps();
   }
-
   render() {
     return (
       <div>
         <h1>Champion List:</h1>
-        <ChampList list= {this.state.list} />
+        <ChampList list= {this.props.champs} />
       </div>
     );
   };
 };
 
-export default App;
+const mapStateToProps = (state) => {
+  return { champs:state.champs}
+};
+
+export default connect(mapStateToProps,{fetchChamps})(App);
