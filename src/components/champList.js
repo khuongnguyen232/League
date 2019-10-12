@@ -1,19 +1,19 @@
 import React from 'react';
-import './champList.css';
-import Axios from '.././API/champList';
-
 import Card from 'react-bootstrap/Card';
 import Accordion from 'react-bootstrap/Accordion';
 import Button from 'react-bootstrap/Button';
+
+import './champList.css';
+import {baseURLImage} from '../API/baseURL';
 
 const champList = ({list}) => {
   if(!list) {
     return <div>Loading data right now ...</div>
   }
     const champList = list.map((champ) => {
-      let imageLink = "http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/" + champ.image.full;
+      let imageLink = baseURLImage + champ.image.full;
     return (
-      <div key= {champ.id} class="grid-item">
+      <div key= {champ.id} className="grid-item">
         <Accordion>
           <Card>
             <Card.Header>
@@ -34,7 +34,7 @@ const champList = ({list}) => {
   });
 
     return(
-      <div class="grid-container">
+      <div className="grid-container">
         {champList};
       </div>
     )
