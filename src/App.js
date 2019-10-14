@@ -1,5 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import champInfo from './components/champInfo';
 
 import ChampList from './components/champList';
 import {fetchChamps} from './actions';
@@ -11,10 +13,13 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div>
-        <h1>Champion List:</h1>
-        <ChampList list= {this.props.champs} />
-      </div>
+      <Router>
+        <div>
+          <Route exact path="/" component={ChampList} />
+          <Route exact path="/champion/:champName" component={champInfo} />
+        </div>
+
+      </Router>
     );
   };
 };
