@@ -1,18 +1,16 @@
 import React from 'react';
-import Card from 'react-bootstrap/Card';
-import Accordion from 'react-bootstrap/Accordion';
-import Button from 'react-bootstrap/Button';
+import {Card, Accordion,Button} from 'react-bootstrap';
 import {connect} from 'react-redux';
 import {Link} from "react-router-dom";
+import SpinnerTab from './SpinnerTab';
 
 import './champList.css';
 import {baseURLImage} from '../API/baseURL';
-import {fetchChampInfo} from '../actions';
 
 
-const champList = ({list, fetchChampInfo}) => {
+const champList = ({list}) => {
   if(list.length === 0) {
-    return <div>Loading data right now ...</div>
+    return <SpinnerTab />;
   }
     const champList = list.map((champ) => {
       let imageLink = baseURLImage + champ.image.full;
@@ -30,7 +28,7 @@ const champList = ({list, fetchChampInfo}) => {
             <Accordion.Collapse eventKey="0">
               <Card.Body>
                 <p>HP: {champ.stats.hp}  MP:{champ.stats.mp}</p>
-                <Link to= {champInfoLink} onClick = {() => fetchChampInfo(champ.id)} >More Info</Link>
+                <Link to= {champInfoLink}>More Info</Link>
               </Card.Body>
             </Accordion.Collapse>
           </Card>
@@ -50,8 +48,8 @@ const champList = ({list, fetchChampInfo}) => {
   };
 
   const mapStateToProps = (state) => {
-    console.log(state);
+    //console.log(state);
     return { list:state.champs}
   };
 
-  export default connect(mapStateToProps, {fetchChampInfo})(champList);
+  export default connect(mapStateToProps)(champList);
