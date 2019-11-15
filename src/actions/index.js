@@ -10,3 +10,8 @@ export const fetchChamps = () => async (dispatch) => {
     }
     dispatch({type:'FETCH_CHAMP',payload:tempList});
 };
+
+export const fetchChampInfo = (id) => async (dispatch) => {
+    const response = await champList.get(`/champion/${id}.json`);
+    dispatch({type:'FETCH_CHAMP_INFO',payload:response.data});
+};
