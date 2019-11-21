@@ -2,8 +2,9 @@ import React from 'react';
 import {connect} from 'react-redux';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import champInfo from './components/champInfo';
-import ChampList from './components/champList';
+import champInfo from './components/ChampionInfo/champInfo';
+import ChampList from './components/ChampionList/champList';
+import ChampionFilter from './components/ChampionFilter/ChampionFilter';
 import {fetchChamps} from './actions';
 import Header from './components/Header/Header';
 import './App.css';
@@ -26,6 +27,7 @@ class App extends React.Component {
         <div>
           <Header />
           <Route path="/champion/:champName" component={champInfo} />
+          <Route path="/filter" component={ChampionFilter} />
           <Route exact path="/" component={ChampList} />
         </div>
       </Router>
