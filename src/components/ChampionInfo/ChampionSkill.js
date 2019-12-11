@@ -5,9 +5,8 @@ import {basedSkillImage} from '../../API/baseURL';
 
 const ChampionSkill = ({skill}) => {
   const skillLink = basedSkillImage + skill.image.full;
-
   return(
-    <Col xs={4} md={2} key={skill.id}>
+    <Col xs={4} md={2}>
       <OverlayTrigger placement='left' overlay={
         <Tooltip id={`tooltip-left`}>
           <h4>{skill.name}</h4>

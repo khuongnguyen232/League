@@ -1,19 +1,27 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Container, Row, Col, Image} from 'react-bootstrap';
+//for dropdown menu
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
 
 import {fetchChampInfo} from '../../actions';
 import {baseLoadingImage} from '../../API/baseURL';
-
 import SpinnerTab from '../SpinnerTab';
 import ChampionSkill from './ChampionSkill';
 import ChampionPassive from './ChampionPassive';
 import ChampionStat from './ChampionStat';
 
 class champInfo extends React.Component {
-
   componentDidMount(){
     this.props.fetchChampInfo(this.props.match.params.champName)
+  }
+
+
+  onClickButton = (selectedChamp) => {
+    const newLink = `/champion/${selectedChamp.label}`;
+    this.props.fetchChampInfo(selectedChamp.label);
+    this.props.history.push(newLink);
   }
 
   render() {
@@ -27,9 +35,14 @@ class champInfo extends React.Component {
 
     const theChampion = this.props.champInfo.data[champName];
 
+    //get the name list for the drop down list
+    const champListName = this.props.champList.map((champ) => {
+      return champ.id;
+    })
+
     const skillList = theChampion.spells.map((skill) => {
       return (
-        <ChampionSkill skill={skill}/>
+        <ChampionSkill skill={skill} key={skill.id}/>
       )
     });
 
@@ -59,14 +72,16 @@ class champInfo extends React.Component {
               <ChampionStat stats={theChampion.stats}/>
             </Col>
           </Row>
+          <h3>Champion List</h3>
+          <Dropdown options={champListName} onChange= {this.onClickButton} placeholder="Select a champion name"/>
         </Container>
       </div>
     );
   }
 };
 
-const mapStateToProps = (state,ownProps) => {
-  return { champInfo:state.champInfo}
+const mapStateToProps = (state) => {
+  return { champInfo:state.champInfo, champList:state.champs}
 };
 
 export default connect(mapStateToProps,{fetchChampInfo})(champInfo);

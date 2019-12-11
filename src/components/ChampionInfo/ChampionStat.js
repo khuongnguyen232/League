@@ -15,7 +15,7 @@ const statsToDisplay = [
 const championStat = ({stats}) => {
   const statslist = statsToDisplay.map((stat) => {
     return(
-      <Col sm={6}>
+      <Col sm={6} key={stat.id}>
         <label>{stat.name}:</label>
         <div>
           {stats[stat.id]} ( + {stats[stat.perLevel]} {stat.symbol})
