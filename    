@@ -1,0 +1,77 @@
+[33mcommit 603d800274e50a54c12a79544fe52c0b9275b321[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Merge: a8fd357 6d83194
+Author: Khuong Nguyen <khuongnguyen232@gmail.com>
+Date:   Wed Dec 11 12:29:21 2019 -0800
+
+    Merge pull request #4 from khuongnguyen232/add-redux
+    
+    Add redux
+
+[33mcommit 6d831945e5ada625e96605389ddceb10a77c1756[m[33m ([m[1;31morigin/add-redux[m[33m, [m[1;32madd-redux[m[33m)[m
+Author: khuong <khuongnguyen232@gmail.com>
+Date:   Tue Dec 10 16:45:10 2019 -0800
+
+    add drop down menu
+
+[33mcommit 437253727a80af0db01afc951284a7aeb70765e5[m
+Author: khuong <khuongnguyen232@gmail.com>
+Date:   Thu Nov 21 15:59:28 2019 -0800
+
+    add filter
+
+[33mcommit a8fd3576dc6eb51d50c8a8fed34f1db53e4f92b1[m
+Merge: be439fe 216ab27
+Author: Khuong Nguyen <khuongnguyen232@gmail.com>
+Date:   Thu Nov 14 16:33:29 2019 -0800
+
+    Merge pull request #3 from khuongnguyen232/add-redux
+    
+    Add redux
+
+[33mcommit 216ab275b88114a4c8c80f1d1838430787a57d90[m
+Author: khuong <khuongnguyen232@gmail.com>
+Date:   Thu Nov 14 15:30:05 2019 -0800
+
+    finish info
+
+[33mcommit 091942c8a6ca7267b73b8237fa021b07d0e302d4[m
+Author: khuong <khuongnguyen232@gmail.com>
+Date:   Mon Oct 14 15:30:55 2019 -0700
+
+    update champion info navigation
+
+[33mcommit be439fef0067ec3af9c5fb3f83721f27ebbd6769[m
+Merge: 5496a8a e79f3c4
+Author: Khuong Nguyen <khuongnguyen232@gmail.com>
+Date:   Sat Oct 12 14:06:09 2019 -0700
+
+    Merge pull request #2 from khuongnguyen232/add-redux
+    
+    update redux in App.js
+
+[33mcommit e79f3c48941fa678a4f51e1c8a029580bbf9174e[m
+Author: khuong <khuongnguyen232@gmail.com>
+Date:   Sat Oct 12 14:02:52 2019 -0700
+
+    update redux in App.js
+
+[33mcommit 5496a8af47038276394405d57f780eb19b561afc[m
+Merge: 0f245b6 741061c
+Author: Khuong Nguyen <khuongnguyen232@gmail.com>
+Date:   Fri Oct 11 17:27:41 2019 -0700
+
+    Merge pull request #1 from khuongnguyen232/add-redux
+    
+    update URL with version
+
+[33mcommit 741061cb1e9a9934d5d8b5c88b9cb7c6938d57ff[m
+Author: khuong <khuongnguyen232@gmail.com>
+Date:   Fri Oct 11 17:17:55 2019 -0700
+
+    update URL with version
+
+[33mcommit 0f245b676dbd128e2a47d4c7e47dd43305e3df06[m
+Author: khuong <khuongnguyen232@gmail.com>
+Date:   Fri Oct 11 11:36:44 2019 -0700
+
+    first commit
