@@ -1,9 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
-import champInfo from './components/champInfo';
-import ChampList from './components/champList';
+import champInfo from './components/ChampionInfo/champInfo';
+import ChampList from './components/ChampionList/champList';
+import ChampionFilter from './components/ChampionFilter/ChampionFilter';
+import Page404 from './Page404/Page404';
 import {fetchChamps} from './actions';
 import Header from './components/Header/Header';
 import './App.css';
@@ -25,8 +27,13 @@ class App extends React.Component {
       <Router>
         <div>
           <Header />
-          <Route path="/champion/:champName" component={champInfo} />
-          <Route exact path="/" component={ChampList} />
+            <Switch>
+              <Route exact path="/" component={ChampList} />
+              <Route path="/filter" component={ChampionFilter} />
+              <Route path="/champion/:champName" component={champInfo} />
+              <Route path="/*" component={Page404} status={404} />
+            </Switch>
+
         </div>
       </Router>
     );
