@@ -1,4 +1,4 @@
-## Beer Bank Project
+## League Clone Project
 This is a fun web app built based on the game League of Legends. It is used to look up the data about each champion.
 Inside this project, I have used:
 + React to build the website and handle the routing
