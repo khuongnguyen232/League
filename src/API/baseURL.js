@@ -1,4 +1,4 @@
-const version = "9.22.1";
+const version = "10.1.1";
 const baseURLLink = `http://ddragon.leagueoflegends.com/cdn/${version}/data/en_US`;
 
 const baseURLImage = `http://ddragon.leagueoflegends.com/cdn/${version}/img/champion/`;
